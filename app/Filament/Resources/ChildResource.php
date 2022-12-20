@@ -21,17 +21,22 @@ class ChildResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('surname')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\DatePicker::make('birthday')
-                    ->rules(['required', 'date']),
                 Forms\Components\Select::make('guardian')
                     ->relationship('guardian', 'name')
                     ->required(),
+                Forms\Components\Grid::make()
+                    ->schema([
+                        Forms\Components\TextInput::make('name')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('surname')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\DatePicker::make('birthday')
+                            ->rules(['required', 'date']),
+
+                    ]),
+
             ]);
     }
 
