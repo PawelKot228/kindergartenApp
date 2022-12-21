@@ -7,18 +7,18 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up()
     {
-        Schema::create('children', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('guardian_id')->nullable()->constrained();
             $table->string('name');
             $table->string('surname');
-            $table->date('birthday');
+            $table->date('contract_start_date');
+            $table->date('birthday')->nullable();
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('children');
+        Schema::dropIfExists('employees');
     }
 };

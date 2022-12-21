@@ -7,18 +7,18 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up()
     {
-        Schema::create('children', function (Blueprint $table) {
+        Schema::create('child_groups', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('guardian_id')->nullable()->constrained();
+            $table->foreignId('school_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('employee_id')->nullable()->constrained()->nullOnDelete();
             $table->string('name');
-            $table->string('surname');
-            $table->date('birthday');
+            $table->integer('capacity')->default(10);
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('children');
+        Schema::dropIfExists('child_groups');
     }
 };
