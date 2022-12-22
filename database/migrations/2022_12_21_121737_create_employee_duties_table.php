@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up()
     {
-        Schema::create('employee_job', function (Blueprint $table) {
+        Schema::create('employee_duty', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employee_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('duty_id')->nullable()->constrained()->cascadeOnDelete();

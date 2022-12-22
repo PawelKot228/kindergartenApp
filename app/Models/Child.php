@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Child extends Model
 {
@@ -13,8 +15,13 @@ class Child extends Model
         'birthday' => 'date',
     ];
 
-    public function guardian(): BelongsTo
+    public function guardian(): HasOne
     {
-        return $this->belongsTo(Guardian::class, 'guardian_id', 'id');
+        return $this->hasOne(Guardian::class);
+    }
+
+    public function absences(): HasMany
+    {
+        return $this->hasMany(ChildAbsence::class);
     }
 }
