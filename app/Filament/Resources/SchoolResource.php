@@ -14,7 +14,7 @@ use Filament\Tables;
 class SchoolResource extends Resource
 {
     protected static ?string $model = School::class;
-
+    protected static ?string $navigationGroup = 'School';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form

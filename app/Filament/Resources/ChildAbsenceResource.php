@@ -15,7 +15,7 @@ use Filament\Tables;
 class ChildAbsenceResource extends Resource
 {
     protected static ?string $model = ChildAbsence::class;
-
+    protected static ?string $navigationGroup = 'People';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form

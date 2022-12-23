@@ -14,7 +14,7 @@ use Filament\Tables;
 class GuardianResource extends Resource
 {
     protected static ?string $model = Guardian::class;
-
+    protected static ?string $navigationGroup = 'People';
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
