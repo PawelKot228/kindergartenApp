@@ -7,11 +7,11 @@ use Illuminate\Support\ServiceProvider;
 
 class FilamentServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
     }
 
-    public function boot()
+    public function boot(): void
     {
         Filament::registerNavigationGroups([
             'School',
