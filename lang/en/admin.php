@@ -9,6 +9,11 @@ return [
         'roles' => 'Roles',
     ],
 
+    'employee' => [
+      'name' => 'Employee Name',
+      'surname' => 'Employee Surname',
+    ],
+
     'absence' => [
         'medical' => 'Medical',
         'excused' => 'Excused',
